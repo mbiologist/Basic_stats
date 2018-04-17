@@ -7,7 +7,7 @@
 # Load library ------------------------------------------------------------
 
 library(tidyverse)
-library(ggplot2)
+
 
 # How do we calculate mean, SD, var, median etc...
 
@@ -108,7 +108,6 @@ sa_time <- sa_time %>%
 
 #create long data
 sa_long <- sa_time %>% 
-  group_by(human) %>% 
   gather(key = "time_type", value = "minutes", -human)
 
 # Qualitative -------------------------------------------------------------
@@ -209,7 +208,7 @@ ggplot(data = sa_clean, aes(x = time_type, y = minutes)) +
 
 # A Basic scatterplot
 
-ggplot(data = sa_time_clean, aes(y = now_now, x = just_now)) +
+ggplot(data = sa_time, aes(y = now_now, x = just_now)) +
   geom_point() +
   coord_equal(xlim =  c(0,60), ylim = c(0,60))
 
