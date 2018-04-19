@@ -94,7 +94,7 @@ t.test(r_one$dat, mu = 30, alternative = "less")
 # what about greater than?
 t.test(r_one$dat, mu = 30, alternative = "greater")
 
-# Two sample t3st ---------------------------------------------------------
+# Two sample test ---------------------------------------------------------
 
  # create another dataframe
 r_two <- data.frame(dat = c(rnorm(n = 20, mean = 4, sd = 1),
@@ -110,11 +110,4 @@ t.test(dat ~ sample, data = r_two, var.equal = TRUE, alternative = "less")
 
 # Is A greater than B
 t.test(dat ~ sample, data = r_two, var.equal = TRUE, alternative = "greater")
-
-
-
-
-
-
-
 
