@@ -1,3 +1,4 @@
+
 #day 5
 #bonga
 #load obraries
@@ -26,12 +27,13 @@ snakes_summary <- snakes %>%
 
 snakes_summary
 
-snakes.summary2 <- summarySE(data = snakes, measurevar = "openings", groupvars = c("day"))
+snakes.summary <- summarySE(data = snakes, measurevar = "openings", groupvars = c("day"))
 
 # Now we turn to some visual data summaries.
 
+
 ggplot(data = snakes, aes(x = day, y = openings)) +
-  geom_segment(data = snakes.summary2, aes(x = day, xend = day, y = openings - ci, yend = openings + ci, colour = day),
+  geom_segment(data = snakes.summary, aes(x = day, xend = day, y = openings - ci, yend = openings + ci, colour = day),
                size = 2.0, linetype = "solid", show.legend = F) +
   geom_boxplot(aes(fill = day), alpha = 0.6, show.legend = F) + 
   geom_jitter(width = 0.05)
@@ -251,4 +253,6 @@ cor.test(ecklonia$primary_blade_length, ecklonia$primary_blade_width, method = "
 ecklonia_pearson <- cor(ecklonia_sub)
 
 corrplot(ecklonia_pearson, method = "circle")
+
+
 
