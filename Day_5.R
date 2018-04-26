@@ -7,7 +7,7 @@ library(tidyverse)
 library(Rmisc)
 
 
-#load data
+#Load data
 
 snakes <- read.csv("snakes.csv.txt")
 
